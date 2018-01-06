@@ -1,0 +1,56 @@
+<div class="jumbotron">
+  <h2>Twitter home</h2>
+  <ul>
+    <li>
+      <strong>Username:</strong>
+      <%= @user.username %>
+    </li>
+    <li>
+      <strong>Subscribe:</strong>
+      <%= @user.subscribe %>
+    </li>
+    <li>
+      <strong>Follower:</strong>
+      <%= @user.follower %>
+    </li>
+
+</ul>
+</div>
+
+
+<%= link "Send Tweet", to: tweet_path(@conn, :sendtweetindex), class: "btn btn-primary" %>
+<%= link "Search Tweet", to: tweet_path(@conn, :querytweetindex), class: "btn btn-primary" %>
+<%= link "Follow Somebody", to: user_path(@conn, :subscribeindex), class: "btn btn-primary" %>
+<%= link "Sign Out", to: session_path(@conn, :delete, :access), method: :delete, class: "btn btn-danger" %>
+
+
+
+<h4>What's happening around ...</h4>
+<%= if @tweetslive===[] do %>
+    <div class="alert alert-danger">
+      <p>Oops, your tweet live is empty, try to send tweets and subscribe more users!</p>
+    </div>
+<% end %>
+
+<%= for tweet <- @tweetslive do %>
+   <ul>
+       <%= if tweet.retweeted_status==true do %>
+         <li>
+         <strong>Retweet</strong>
+         </li>
+       <% end %>
+       <li>
+         <strong>Author:</strong>
+         <%= tweet.author %>
+       </li>
+       <li>
+         <strong>Time:</strong>
+         <%= tweet.inserted_at %>
+       </li>
+       <li>
+         <strong>Content:</strong>
+         <%= tweet.content %>
+       </li>
+       <%= link "retweet", to: retweet_path(@conn, :show, tweet), class: "btn btn-default btn-xs" %>     
+   </ul>
+<% end %>

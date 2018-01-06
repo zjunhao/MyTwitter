@@ -1,0 +1,18 @@
+<h1>Follow Somebody...</h1>
+
+
+<%= form_for @conn, user_path(@conn, :subscribe), [as: :follow], fn f -> %>
+  
+  <div class="form-group">
+  	<%= label f, :subscribe, class: "control-label" %>
+    <%= text_input f, :subscribe, class: "form-control" %>
+    <%= error_tag f, :subscribe %>
+  </div>
+  
+  <div class="form-group">
+    <%= submit "Follow!", class: "btn btn-primary" %>
+  </div>
+
+<% end %>
+
+<%= link "Back to Home", to: page_path(@conn, :home)%>
