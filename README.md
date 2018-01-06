@@ -1,20 +1,21 @@
 # Twitter
 
-To start your Phoenix server:
+This project is a twitter implementation using phoenix, can support basic twitter operations such as:
+
+  * Register account
+  * Send tweet and re-tweet
+  * Subscribe to other users
+  * Query tweets using username, hashtag(#) or mentioned(@)
+  * Can get tweet live when user is connected
+
+To start your Phoenix twitter server:
 
   * Install dependencies with `mix deps.get`
   * Create and migrate your database with `mix ecto.create && mix ecto.migrate`
   * Install Node.js dependencies with `cd assets && npm install`
-  * Start Phoenix endpoint with `mix phx.server`
+  * Change directory back to MyTwitter and start Phoenix endpoint with `mix phx.server`
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
-Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
 
-## Learn more
 
-  * Official website: http://www.phoenixframework.org/
-  * Guides: http://phoenixframework.org/docs/overview
-  * Docs: https://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
