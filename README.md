@@ -1,6 +1,6 @@
 # Twitter
 
-This project is a twitter implementation using phoenix, can support basic twitter operations such as:
+This project builds a twitter web application using phoenix, can support basic twitter operations such as:
 
   * Register account
   * Send tweet and re-tweet
@@ -15,7 +15,7 @@ To start your Phoenix twitter server:
   * Install Node.js dependencies with `cd assets && npm install`
   * Change directory back to MyTwitter and start Phoenix endpoint with `mix phx.server`
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+Now you can visit [`localhost:4000`](http://localhost:4000) from your browser, and do all possible twitter operations mentioned above with our user interface!
 
 
 
